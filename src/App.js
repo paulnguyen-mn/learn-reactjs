@@ -1,8 +1,8 @@
-import React from "react";
-import { NavLink, Redirect, Route, Switch } from "react-router-dom";
-import NotFound from "./components/NotFound";
-import AlbumFeature from "./features/Album";
-import TodoFeature from "./features/Todo";
+import React from 'react';
+import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
+import NotFound from './components/NotFound';
+import AlbumFeature from './features/Album';
+import TodoFeature from './features/Todo';
 
 function App() {
   return (
