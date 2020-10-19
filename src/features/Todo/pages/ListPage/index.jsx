@@ -4,6 +4,7 @@ import TodoList from '../../components/TodoList';
 import queryString from 'query-string';
 import { useEffect } from 'react';
 import { useMemo } from 'react';
+import TodoForm from '../../components/TodoForm';
 
 ListPage.propTypes = {
 
@@ -85,10 +86,17 @@ function ListPage(props) {
 
   const renderedTodoList = useMemo(() => {
     return todoList.filter(todo => filteredStatus === 'all' || filteredStatus === todo.status);
-  }, [todoList, filteredStatus])
+  }, [todoList, filteredStatus]);
+
+  const handleTodoFormSubmit = (values) => {
+    console.log('Form submit: ', values);
+  };
 
   return (
     <div>
+      <h3>What to do</h3>
+      <TodoForm onSubmit={handleTodoFormSubmit} />
+
       <h3>Todo List</h3>
       <TodoList todoList={renderedTodoList} onTodoClick={handleTodoClick} />
 
