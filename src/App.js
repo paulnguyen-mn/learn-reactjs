@@ -1,20 +1,12 @@
+import Header from 'components/Header';
 import React, { useEffect } from 'react';
 import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
 import productApi from './api/productApi';
+import './App.css';
 import NotFound from './components/NotFound';
 import AlbumFeature from './features/Album';
 import CounterFeature from './features/Counter';
 import TodoFeature from './features/Todo';
-import './App.css';
-import styled from 'styled-components';
-
-// CSS in JS
-const Title = styled.h1`
-  text-align: center;
-  font-weight: bold;
-
-  color: ${(props) => props.color || 'green'};
-`;
 
 function App() {
   useEffect(() => {
@@ -31,18 +23,8 @@ function App() {
 
   return (
     <div className="app">
-      <Title color="goldenrod">HEADING</Title>
+      <Header />
 
-      <p>
-        <NavLink to="/todos" activeClassName="active-menu">
-          Todos
-        </NavLink>
-      </p>
-      <p>
-        <NavLink to="/albums" activeClassName="active">
-          Albums
-        </NavLink>
-      </p>
       <Switch>
         <Redirect from="/home" to="/" exact />
         <Redirect from="/post-list/:postId" to="/posts/:postId" exact />
