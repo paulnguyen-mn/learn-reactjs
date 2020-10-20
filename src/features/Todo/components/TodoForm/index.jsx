@@ -1,9 +1,9 @@
+import InputField from '@components/form-controls/InputField';
 import { yupResolver } from '@hookform/resolvers/yup';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import * as yup from "yup";
-import InputField from '../../../../components/form-controls/InputField';
+import * as yup from 'yup';
 
 TodoForm.propTypes = {
   onSubmit: PropTypes.func,
@@ -11,9 +11,7 @@ TodoForm.propTypes = {
 
 function TodoForm(props) {
   const schema = yup.object().shape({
-    title: yup.string()
-      .required('Please enter title')
-      .min(5, 'Title is too short'),
+    title: yup.string().required('Please enter title').min(5, 'Title is too short'),
   });
   const form = useForm({
     defaultValues: {
@@ -29,7 +27,7 @@ function TodoForm(props) {
     }
 
     form.reset();
-  }
+  };
 
   return (
     <form onSubmit={form.handleSubmit(handleSubmit)}>
@@ -38,4 +36,4 @@ function TodoForm(props) {
   );
 }
 
-export default TodoForm; 
+export default TodoForm;
