@@ -8,6 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import CodeIcon from '@material-ui/icons/Code';
+import Register from 'features/Auth/components/Register';
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -73,9 +74,7 @@ export default function Header() {
         aria-labelledby="form-dialog-title"
       >
         <DialogContent>
-          <DialogContentText>
-            To subscribe to this website, please enter your email address here. We will send updates occasionally.
-          </DialogContentText>
+          <Register />
         </DialogContent>
 
         <DialogActions>
