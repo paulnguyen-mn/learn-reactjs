@@ -5,6 +5,7 @@ import NotFound from './components/NotFound';
 import AlbumFeature from './features/Album';
 import CounterFeature from './features/Counter';
 import TodoFeature from './features/Todo';
+import './App.css';
 
 function App() {
   useEffect(() => {
@@ -20,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="app">
       Header
       <p>
         <NavLink to="/todos" activeClassName="active-menu">
