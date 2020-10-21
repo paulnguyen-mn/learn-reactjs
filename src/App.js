@@ -1,6 +1,6 @@
 import Header from 'components/Header';
 import React, { useEffect } from 'react';
-import { NavLink, Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import productApi from './api/productApi';
 import './App.css';
 import NotFound from './components/NotFound';
