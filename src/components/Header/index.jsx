@@ -73,7 +73,7 @@ export default function Header() {
         aria-labelledby="form-dialog-title"
       >
         <DialogContent>
-          <Register />
+          <Register closeDialog={handleClose} />
         </DialogContent>
 
         <DialogActions>
