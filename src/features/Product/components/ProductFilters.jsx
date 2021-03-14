@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import FilterByCategory from './Filters/FilterByCategory';
 import FilterByPrice from './Filters/FilterByPrice';
+import FilterByService from './Filters/FilterByService';
 
 ProductFilters.propTypes = {
   filters: PropTypes.object.isRequired,
@@ -19,14 +20,15 @@ function ProductFilters({ filters, onChange }) {
     onChange(newFilters);
   };
 
-  const handlePriceChange = (values) => {
+  const handeChange = (values) => {
     if (onChange) onChange(values);
   };
 
   return (
     <Box>
       <FilterByCategory onChange={handleCategoryChange} />
-      <FilterByPrice onChange={handlePriceChange} />
+      <FilterByPrice onChange={handeChange} />
+      <FilterByService filters={filters} onChange={handeChange} />
     </Box>
   );
 }

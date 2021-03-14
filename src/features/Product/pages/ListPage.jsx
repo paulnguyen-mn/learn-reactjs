@@ -49,7 +49,6 @@ function ListPage(props) {
         const { data, pagination } = await productApi.getAll(filters);
         setProductList(data);
         setPagination(pagination);
-        console.log({ data, pagination });
       } catch (error) {
         console.log('Failed to fetch product list: ', error);
       }
