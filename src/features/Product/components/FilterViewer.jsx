@@ -66,15 +66,19 @@ const FILTER_LIST = [
     },
     onToggle: () => {},
   },
-  // {
-  //   id: 4,
-  //   getLabel: (filters) => 'Danh mục',
-  //   isActive: () => true,
-  //   isVisible: (filters) => true,
-  //   isRemovable: true,
-  //   onRemove: (filters) => {},
-  //   onToggle: (filters) => {},
-  // },
+  {
+    id: 4,
+    getLabel: (filters) => `Danh mục: ${filters['category.id']}`,
+    isActive: () => true,
+    isVisible: (filters) => filters['category.id'],
+    isRemovable: true,
+    onRemove: (filters) => {
+      const newFilters = { ...filters };
+      delete newFilters['category.id'];
+      return newFilters;
+    },
+    onToggle: (filters) => {},
+  },
 ];
 
 FilterViewer.propTypes = {
