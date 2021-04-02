@@ -50,3 +50,18 @@ DetailPage handleSubmit
 /products/:productId/additional --> ProductAdditional
 /products/:productId/reviews --> ProductReviews
 
+
+
+DetailPage
+Click Chon Mua
+Open Mini Cart
+Go to Cart Page
+
+Cart
+- showMiniCart: true / false
+- cartItems -> item (product, quantity)
+
+State tính toán phụ thuộc vào state có sẵn
+- cartItemsCount
+- cartTotal
+--> createSelector()
