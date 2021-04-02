@@ -1,4 +1,4 @@
-import { Box, Container, Grid, makeStyles, Paper } from '@material-ui/core';
+import { Box, Container, Grid, LinearProgress, makeStyles, Paper } from '@material-ui/core';
 import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router';
 import AddToCartForm from '../components/AddToCartForm';
@@ -11,7 +11,9 @@ import ProductThumbnail from '../components/ProductThumbnail';
 import useProductDetail from '../hooks/useProductDetail';
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    paddingBottom: theme.spacing(3),
+  },
 
   left: {
     width: '400px',
@@ -22,6 +24,13 @@ const useStyles = makeStyles((theme) => ({
   right: {
     flex: '1 1 0',
     padding: theme.spacing(1.5),
+  },
+
+  loading: {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    width: '100%',
   },
 }));
 
@@ -34,8 +43,11 @@ function DetailPage() {
   const { product, loading } = useProductDetail(productId);
 
   if (loading) {
-    // TODO: Make this beautiful
-    return <Box>Loading</Box>;
+    return (
+      <Box className={classes.loading}>
+        <LinearProgress />
+      </Box>
+    );
   }
 
   const handleAddToCartSubmit = (formValues) => {
